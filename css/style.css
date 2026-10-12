@@ -1,6 +1,7 @@
 :root {
   --ink: #17212b;
   --navy: #17324d;
+  --heading: #17324d;
   --accent: #e8754f;
   --paper: #f7f3ee;
   --mist: #e7eef0;
@@ -9,6 +10,8 @@
   --accent-dark: #bf4d2d;
   --accent-darker: #b95132;
   --border: #b8c8cc;
+  --profile-border: #e4f0f1;
+  --navy-transparent: rgba(23, 50, 77, 0.96);
   --shadow: 0 1rem 2.5rem rgba(23, 50, 77, 0.12);
   --dark-shadow: 0 1rem 2.5rem rgba(7, 19, 31, 0.4);
   --content-width: 1120px;
@@ -25,7 +28,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 4rem;
-  color-scheme: only light;
+  color-scheme: light dark;
 }
 
 body {
@@ -64,7 +67,7 @@ nav {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: rgba(23, 50, 77, 0.96);
+  background: var(--navy-transparent);
   border-bottom: 1px solid rgba(255, 255, 255, 0.14);
 }
 
@@ -103,7 +106,7 @@ main a {
 
 main a:hover,
 main a:focus-visible {
-  color: var(--navy);
+  color: var(--heading);
 }
 
 img {
@@ -117,7 +120,7 @@ section {
 }
 
 section h2 {
-  color: var(--navy);
+  color: var(--heading);
   font-size: clamp(1.8rem, 4vw, 2.8rem);
   margin-bottom: 2rem;
   padding-bottom: 0.65rem;
@@ -138,7 +141,7 @@ section h2 {
   aspect-ratio: 1;
   object-fit: cover;
   border-radius: 50%;
-  border: 0.4rem solid #e4f0f1;
+  border: 0.4rem solid var(--profile-border);
   box-shadow: var(--dark-shadow);
 }
 
@@ -174,7 +177,7 @@ section h2 {
 .project-card h3,
 #experience h3,
 #contact h3 {
-  color: var(--navy);
+  color: var(--heading);
   font-size: 1.15rem;
   margin-bottom: 0.75rem;
 }
@@ -264,7 +267,7 @@ section h2 {
 
 #contact dt {
   font-weight: 900;
-  color: var(--navy);
+  color: var(--heading);
 }
 
 #contact dd {
@@ -359,6 +362,31 @@ footer {
   color: var(--white);
   text-align: center;
   padding: 2rem 1.25rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #edf2f3;
+    --navy: #122a38;
+    --heading: #d7edf3;
+    --accent: #ff9b78;
+    --paper: #101820;
+    --mist: #1d2a33;
+    --white: #ffffff;
+    --navy-light: #1e4d61;
+    --accent-dark: #ffb39a;
+    --accent-darker: #ffb39a;
+    --border: #526a73;
+    --profile-border: #b8dce4;
+    --navy-transparent: rgba(16, 24, 32, 0.96);
+    --shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.24);
+    --dark-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.5);
+  }
+
+  main a:hover,
+  main a:focus-visible {
+    color: var(--heading);
+  }
 }
 
 @media (max-width: 700px) {
